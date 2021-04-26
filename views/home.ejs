@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="/Random-Joke"> <button>Random Joke</button></a>
+    </header>
+    <div>
+     <% info.forEach(data=>{%>
+        <div>
+            <p><b>Joke number:  </b><%= data.id  %> </p>
+            <p><b>Joke type:  </b><%= data.type  %> </p>
+            <p><b>Joke setup:  </b><%= data.setup %> </p>
+            <p><b>Joke punchline:  </b><%= data.punchline  %> </p>
+<form action="/Favorite-Jokes" method="POST">
+<input type="hidden" name="number" value="<%= data.id  %>">
+<input type="hidden" name="type" value="<%= data.type  %>">
+<input type="hidden" name="setup" value="<%= data.setup  %>">
+<input type="hidden" name="punchline" value="<%= data.punchline  %>">
+<input type="submit" value="Add-to-my-jokes-list">
+</form>
+
+        </div>
+        <% }) %> 
+
+    </div>
+</body>
+</html>
